@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterflighsearch/widget/button/rounded_button.dart';
+import 'package:flutterflighsearch/widget/content_card.dart';
 
 import 'air_asia_bar.dart';
 
@@ -18,7 +19,9 @@ class HomePage extends StatelessWidget {
               child: new Column(
                 children: <Widget>[
                   _buildButtonsRow(),
-                  Container(), //TODO: Implement a card
+                  Expanded(
+                    child: ContentCard(),
+                  ), //TODO: Implement a card
                 ],
               ),
             ),
