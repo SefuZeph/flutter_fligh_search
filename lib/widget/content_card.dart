@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterflighsearch/widget/multicity_input.dart';
 
 class ContentCard extends StatefulWidget {
   @override
@@ -69,7 +70,7 @@ class _ContentCardState extends State<ContentCard> {
   Widget _buildMulticityTab() {
     return Column(
       children: <Widget>[
-        Text("Inputs"),
+        MulticityInput(),
         Expanded(
           child: Container(),
         ),
