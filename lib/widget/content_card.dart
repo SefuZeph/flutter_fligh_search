@@ -18,6 +18,7 @@ class _ContentCardState extends State<ContentCard> {
             return Column(
               children: <Widget>[
                 _buildTabBar(),
+                _buildContainer(viewportConstraints)
               ],
             );
           },
@@ -45,6 +46,42 @@ class _ContentCardState extends State<ContentCard> {
           ],
           labelColor: Colors.black,
           unselectedLabelColor: Colors.grey,
+        )
+      ],
+    );
+  }
+
+  Widget _buildContainer(BoxConstraints viewportConstraints) {
+    return Expanded(
+      child: SingleChildScrollView(
+        child: ConstrainedBox(
+          constraints:
+              BoxConstraints(minHeight: viewportConstraints.maxHeight - 48.0),
+          child: IntrinsicHeight(
+            child: _buildMulticityTab(),
+          ),
+        ),
+      ),
+    );
+  }
+
+  // Add floating action button
+  Widget _buildMulticityTab() {
+    return Column(
+      children: <Widget>[
+        Text("Inputs"),
+        Expanded(
+          child: Container(),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(bottom: 16.0, top: 8.0),
+          child: FloatingActionButton(
+            onPressed: () {},
+            child: Icon(
+              Icons.timeline,
+              size: 36.0,
+            ),
+          ),
         )
       ],
     );
